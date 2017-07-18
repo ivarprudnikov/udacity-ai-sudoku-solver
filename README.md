@@ -2,13 +2,18 @@
 ## Introductory Project: Diagonal Sudoku Solver
 
 # Question 1 (Naked Twins)
-Q: How do we use constraint propagation to solve the naked twins problem?  
+Q: How do we use constraint propagation to solve the naked twins problem?
+
 A: Naked twins - when 2 boxes in a unit have same possible 2 values eg: A1 has 3,4 and A2 has 4,3. This means other boxes in a same unit cannot contain similar values (2 values can only fill 2 boxes), thus we can eliminate them from possibilities of other unit boxes.
+
 I've used `unit` the same as in lessons, meaning a collection of boxes that can have unique values from 1 to 9.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: Diagonal boxes become additional units in a game and get checked when performing elimination, naked twins, only choice calculations.
+
+A: Diagonal boxes become additional units in a game and get checked when performing elimination, naked twins, only choice calculations. Adding additional constraint allows to solve grid faster.
+
+Before applying diagonal constraint each box could have 3 units of possible peers, after introduction of diagonal constraint this changed and some of the boxes obtained 4th unit of diagonal peers, in extreme case - center box 'E5' has 5 units of peers: 2 diagonal, 1 vertical, 1 horizontal, 1 square.
 
 ### Install
 
